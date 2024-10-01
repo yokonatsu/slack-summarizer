@@ -183,6 +183,7 @@ for channel in channels:
         print(e)
 
 title = (f"{yesterday.strftime('%Y-%m-%d')}の要約")
+print(f"Title set to: {title}")
 
 text = title+"\n\n"+"\n\n".join(result_text)
 
