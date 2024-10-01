@@ -73,6 +73,8 @@ def get_time_range():
         >>> print(start_time, end_time)
         2022-05-17 09:00:00+09:00 2022-05-18 10:00:00+09:00
     """
+    """
+    昨日
     hours_back = 25
     timezone = pytz.timezone(TIMEZONE_STR)
     now = datetime.now(timezone)
@@ -82,7 +84,18 @@ def get_time_range():
     end_time = datetime(now.year, now.month, now.day, now.hour, now.minute,
                         now.second)
     return start_time, end_time
+    """
 
+    timezone = pytz.timezone(TIMEZONE_STR)
+    now = datetime.now(timezone)
+
+    # 今日の0時 (midnight) を取得
+    start_time = datetime(now.year, now.month, now.day, 0, 0, 0)
+    
+    # 現在時刻を終了時刻として設定
+    end_time = now
+
+    return start_time, end_time
 
 def estimate_openai_chat_token_count(text: str) -> int:
     """
