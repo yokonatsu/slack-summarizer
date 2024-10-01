@@ -194,7 +194,7 @@ def runner():
             text = summarize("\n".join(splitted_messages), LANGUAGE)
             result_text.append(text)
 
-    title = (f"{yesterday.strftime('%Y-%m-%d')}の要約")
+    title = (f"{start_time.strftime('%Y-%m-%d')} public channels summary\n\n")
 
     if DEBUG:
         print("\n".join(result_text))
