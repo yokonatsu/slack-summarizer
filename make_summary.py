@@ -14,8 +14,8 @@ from openai.error import InvalidRequestError
 #以下の3つはご自身の環境で取得し書き換える必要があります。
 openai.api_key = "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"
 # APIトークンとチャンネルIDを設定する
-TOKEN = "xoxb-418793386945-5082510794614-zMHY5IlXcT17NSYL6ofZyEzb"
-CHANNEL_ID = "C052M0LL8KV"
+TOKEN = "xoxb-7805923970389-7811523068980-847Ai1uV8CV2hXAdM6OW3jSH"
+CHANNEL_ID = "C07Q5LWCM33"
 
 # OpenAIのAPIを使って要約を行う
 def summarize(text):
