@@ -25,6 +25,7 @@ openai.api_key = OPEN_AI_TOKEN
 # OpenAIのAPIを使って要約を行う
 def summarize(text):
     print(f"Summarize set token: {openai.api_key}")
+    print(f"Summarize text: {text}")
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
