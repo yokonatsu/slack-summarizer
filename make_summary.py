@@ -188,7 +188,7 @@ for channel in channels:
     # summarize関数の呼び出しを削除
     try:
         # result_text.append(summarize(messages_in_channel))
-        result_text.append("\n".join(messages_in_channel))
+        result_text.append("\n\n".join(messages_in_channel))
 
     except InvalidRequestError as e:
         print(e)
