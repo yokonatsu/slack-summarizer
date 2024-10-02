@@ -186,11 +186,13 @@ for channel in channels:
             messages = load_messages(channel["id"], thread["ts"])
             if messages:
                 messages_in_channel.extend(messages[::-1])
-    try:
-        result_text.append(summarize(messages_in_channel))
 
-    except InvalidRequestError as e:
-        print(e)
+    # summarize関数の呼び出しを削除
+    #try:
+        #result_text.append(summarize(messages_in_channel))
+
+    #except InvalidRequestError as e:
+        #print(e)
 
 title = (f"{yesterday.strftime('%Y-%m-%d')}の要約テスト")
 print(f"Title set to: {title}")
