@@ -45,7 +45,7 @@ end_time = datetime(now.year, now.month, now.day,
                     now.hour, now.minute, now.second)
 
 # Slack APIクライアントを初期化する
-client = WebClient(token=TOKEN)
+client = WebClient(token=SLACK_BOT_TOKEN)
 
 # ユーザーIDからユーザー名に変換するために、ユーザー情報を取得する
 try:
