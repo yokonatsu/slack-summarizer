@@ -61,6 +61,7 @@ try:
         types="public_channel,private_channel",
         limit=500
     )
+    print(f"Channels_info : {channels_info}")
 
     channels = [channel for channel in channels_info['channels']
             if not channel["is_archived"] and channel["is_channel"] and channel["name"].endswith('__s')]
