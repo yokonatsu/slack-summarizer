@@ -64,7 +64,7 @@ try:
     print(f"Channels_info : {channels_info}")
 
     channels = [channel for channel in channels_info['channels']
-            if not channel["is_archived"] and channel["is_channel"] and channel["name"].endswith('__s')]
+            if not channel["is_archived"] and channel["is_channel"]]
     channels = sorted(channels, key=lambda x: int(re.findall(
         r'\d+', x["name"])[0]) if re.findall(r'\d+', x["name"]) else float('inf'))
 except SlackApiError as e:
