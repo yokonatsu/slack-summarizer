@@ -70,6 +70,8 @@ except SlackApiError as e:
     print("Error : {}".format(e))
     exit(1)
 
+print(f"Channels : {channels}")
+
 # 指定したチャンネルの履歴を取得する
 def load_messages(channel_id, ts):
     result = None
@@ -191,6 +193,7 @@ title = (f"{yesterday.strftime('%Y-%m-%d')}の要約テスト")
 print(f"Title set to: {title}")
 
 text = title+"\n\n"+"\n\n".join(result_text)
+print(f"Text set to: {text}")
 
 response = client.chat_postMessage(
     channel=CHANNEL_ID,
