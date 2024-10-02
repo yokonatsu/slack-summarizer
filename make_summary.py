@@ -186,11 +186,12 @@ for channel in channels:
                 messages_in_channel.extend(messages[::-1])
 
     # summarize関数の呼び出しを削除
-    #try:
-        #result_text.append(summarize(messages_in_channel))
+    try:
+        # result_text.append(summarize(messages_in_channel))
+        result_text.append("\n".join(messages_in_channel))
 
-    #except InvalidRequestError as e:
-        #print(e)
+    except InvalidRequestError as e:
+        print(e)
 
 title = (f"{yesterday.strftime('%Y-%m-%d')}の要約テスト")
 
