@@ -24,6 +24,8 @@ openai.api_key = OPEN_AI_TOKEN
 
 # OpenAIのAPIを使って要約を行う
 def summarize(text):
+    print(f"Summarize set token: {openai.api_key}")
+
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         temperature=0.5,
@@ -61,11 +63,9 @@ try:
         types="public_channel,private_channel",
         limit=500
     )
-    print(f"Channels_info : {channels_info}")
 
     channels = [channel for channel in channels_info['channels']
             if not channel["is_archived"] and channel["is_channel"]]
-    print(f"Channels_1 : {channels}")
     channels = sorted(channels, key=lambda x: int(re.findall(
         r'\d+', x["name"])[0]) if re.findall(r'\d+', x["name"]) else float('inf'))
 except SlackApiError as e:
