@@ -24,9 +24,6 @@ openai.api_key = OPEN_AI_TOKEN
 
 # OpenAIのAPIを使って要約を行う
 def summarize(text):
-    print(f"Summarize set token: {openai.api_key}")
-    print(f"Summarize text: {text}")
-
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         temperature=0.5,
@@ -72,8 +69,6 @@ try:
 except SlackApiError as e:
     print("Error : {}".format(e))
     exit(1)
-
-print(f"Channels : {channels}")
 
 # 指定したチャンネルの履歴を取得する
 def load_messages(channel_id, ts):
@@ -195,10 +190,8 @@ for channel in channels:
         #print(e)
 
 title = (f"{yesterday.strftime('%Y-%m-%d')}の要約テスト")
-print(f"Title set to: {title}")
 
 text = title+"\n\n"+"\n\n".join(result_text)
-print(f"Text set to: {text}")
 
 response = client.chat_postMessage(
     channel=CHANNEL_ID,
