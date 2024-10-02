@@ -51,10 +51,12 @@ client = WebClient(token=SLACK_BOT_TOKEN)
 try:
     users_info = client.users_list()
     users = users_info['members']
-    print("Users : {users}")
+
 except SlackApiError as e:
     print("Error : {}".format(e))
     exit(1)
+
+print(f"Users: {users}")
 
 # チャンネルIDからチャンネル名に変換するために、チャンネル情報を取得する
 try:
