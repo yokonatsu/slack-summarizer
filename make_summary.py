@@ -187,7 +187,7 @@ for channel in channels:
     except InvalidRequestError as e:
         print(e)
 
-title = (f"{yesterday.strftime('%Y-%m-%d')}の要約")
+title = (f"{yesterday.strftime('%Y-%m-%d')}の要約テスト")
 print(f"Title set to: {title}")
 
 text = title+"\n\n"+"\n\n".join(result_text)
