@@ -24,7 +24,6 @@ openai.api_key = OPEN_AI_TOKEN
 
 # OpenAIのAPIを使って要約を行う
 def summarize(text):
-    openai.api_key = "sk-ND1EhyzCVZnUGHW_X5hZ83vd9CCDOvpN-5eiX5BTkzT3BlbkFJvdzeho32IGGwWQFLM_3_QvXE4v0gZVBLJ0IIBwmFIA"
     print(f"Summarize set token: {openai.api_key}")
 
     response = openai.ChatCompletion.create(
