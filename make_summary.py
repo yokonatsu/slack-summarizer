@@ -12,10 +12,15 @@ import openai
 from openai.error import InvalidRequestError
 
 #以下の3つはご自身の環境で取得し書き換える必要があります。
-openai.api_key = "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"
+#openai.api_key = "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"
 # APIトークンとチャンネルIDを設定する
-TOKEN = "xoxb-7805923970389-7811523068980-847Ai1uV8CV2hXAdM6OW3jSH"
-CHANNEL_ID = "C07Q5LWCM33"
+#TOKEN = "xoxb-7805923970389-7811523068980-847Ai1uV8CV2hXAdM6OW3jSH"
+#CHANNEL_ID = "C07Q5LWCM33"
+
+OPEN_AI_TOKEN = str(os.environ.get('OPEN_AI_TOKEN')).strip()
+SLACK_BOT_TOKEN = str(os.environ.get('SLACK_BOT_TOKEN')).strip()
+CHANNEL_ID = str(os.environ.get('SLACK_POST_CHANNEL_ID')).strip()
+openai.api_key = OPEN_AI_TOKEN
 
 # OpenAIのAPIを使って要約を行う
 def summarize(text):
